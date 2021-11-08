@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ZSAndroid/Desktop/CrawlerNovel/app/src/main/res/drawable/editview_shape.xml" value="0.3764102564102564" />
+        <entry key="..\:/Users/ZSAndroid/Desktop/CrawlerNovel/app/src/main/res/drawable/hand_down_anim.xml" value="0.36256410256410254" />
+        <entry key="..\:/Users/ZSAndroid/Desktop/CrawlerNovel/app/src/main/res/drawable/hand_up_anim.xml" value="0.3764102564102564" />
+        <entry key="..\:/Users/ZSAndroid/Desktop/CrawlerNovel/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3764102564102564" />
+        <entry key="..\:/Users/ZSAndroid/Desktop/CrawlerNovel/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.3764102564102564" />
+        <entry key="..\:/Users/ZSAndroid/Desktop/CrawlerNovel/app/src/main/res/drawable/input_bg_shape.xml" value="0.3764102564102564" />
+        <entry key="..\:/Users/ZSAndroid/Desktop/CrawlerNovel/app/src/main/res/drawable/login_btn_selector.xml" value="0.3764102564102564" />
+        <entry key="..\:/Users/ZSAndroid/Desktop/CrawlerNovel/app/src/main/res/layout/activity_login_success.xml" value="0.3380208333333333" />
+        <entry key="..\:/Users/ZSAndroid/Desktop/CrawlerNovel/app/src/main/res/layout/activity_main.xml" value="0.3515625" />
+        <entry key="..\:/Users/ZSAndroid/Desktop/CrawlerNovel/app/src/main/res/layout/recyitem.xml" value="0.3380208333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
