@@ -12,7 +12,7 @@ import lombok.Data;
 
 @Data
 public class BookInfoBean {
-    private String id;
+    private Integer id;
     private String bookName;
     private String author;
     private String updateTime;
@@ -20,7 +20,7 @@ public class BookInfoBean {
     public BookInfoBean() {
     }
 
-    public BookInfoBean(String id, String bookName, String author, String updateTime) {
+    public BookInfoBean(Integer id, String bookName, String author, String updateTime) {
         this.id = id;
         this.bookName = bookName;
         this.author = author;

@@ -1,5 +1,6 @@
 package com.lpssfyx.ldy.crawlernovel.ui;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -60,6 +61,7 @@ public class AdminSelectNavelNamesActivity extends AppCompatActivity {
         OkGo.<String>post("http://112.74.52.8:8085/book/selectBookAllInfo")
                 .tag("获取全部用户信息")
                 .execute(new StringDialogCallback(this) {
+                    @SuppressLint("LongLogTag")
                     @Override
                     public void onSuccess(Response<String> response) {
                         BookBean bookBean = GsonUtil.gsonToBean(response.body(), BookBean.class);
@@ -69,14 +71,16 @@ public class AdminSelectNavelNamesActivity extends AppCompatActivity {
                             List<BookBean.Data> list = bookBean.getData();
                             List<BookInfoBean> bookInfoBeanList = new ArrayList<>();
 
+                            Log.i(TAG, "list: " + list);
                             for (BookBean.Data bookInfo : list) {
-                                bookInfoBean = new BookInfoBean(String.valueOf(bookInfo.getId()), bookInfo.getBookName(), bookInfo.getAuthor(), bookInfo.getUpdateTime());
+                                bookInfoBean = new BookInfoBean(bookInfo.getId(), bookInfo.getBookName(), bookInfo.getAuthor(), bookInfo.getUpdateTime());
                                 bookInfoBeanList.add(bookInfoBean);
                             }
 
-                            //创建适配器
-                            adapter = new BaseNovelInfoAdapter(R.layout.activity_admin_select_navel_names, bookInfoBeanList);
+                            adapter = new BaseNovelInfoAdapter(R.layout.admin_recycler_view_novel_item, bookInfoBeanList);
                             recyclerViewNavel.setAdapter(adapter);
+//                            //创建适配器
+
                             return;
                         }
                         if (200 == bookBean.getCode() && bookBean.getData() == null && bookBean.getMsg().equals("error")) {

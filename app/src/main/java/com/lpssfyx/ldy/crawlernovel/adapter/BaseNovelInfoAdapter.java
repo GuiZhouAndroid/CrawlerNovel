@@ -29,7 +29,7 @@ public class BaseNovelInfoAdapter extends BaseQuickAdapter<BookInfoBean, BaseVie
     @Override
     protected void convert(@NonNull BaseViewHolder baseViewHolder, BookInfoBean bookInfoBean) {
         //可链式调用赋值
-        baseViewHolder.setText(R.id.novel_id, bookInfoBean.getId())
+        baseViewHolder.setText(R.id.novel_id,String.valueOf(bookInfoBean.getId()))
                 .setText(R.id.novel_name,bookInfoBean.getBookName())
                 .setText(R.id.novel_author,bookInfoBean.getAuthor())
                 .setText(R.id.novel_time,bookInfoBean.getUpdateTime());
