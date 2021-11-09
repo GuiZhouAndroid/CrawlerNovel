@@ -6,20 +6,14 @@
     android:orientation="vertical"
     android:fitsSystemWindows="true"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.AdminSuccessActivity">
-    <Button
-        android:id="@+id/start_select"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="点击动态实时查询爬取小说名称列表"
-        android:textSize="20sp" />
+    tools:context=".ui.AdminSelectNavelNamesActivity">
+
     <TextView
         android:paddingTop="30dp"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="查询爬虫小说系统目前全部用户信息如下"
+        android:text="当前爬去小说信息如下"
         android:textSize="20sp" />
     <LinearLayout
         android:paddingTop="20dp"
@@ -32,7 +26,7 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="用户编号"
+            android:text="小说编号"
             android:textSize="15sp" />
 
         <TextView
@@ -40,7 +34,23 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="用户姓名"
+            android:text="小说名称"
+            android:textSize="15sp" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="小说作者"
+            android:textSize="15sp" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="爬取时间"
             android:textSize="15sp" />
     </LinearLayout>
 
@@ -51,7 +61,7 @@
         android:layout_height="0.3dp"
         android:textSize="15sp" />
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_user"
+        android:id="@+id/recyclerView_novel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

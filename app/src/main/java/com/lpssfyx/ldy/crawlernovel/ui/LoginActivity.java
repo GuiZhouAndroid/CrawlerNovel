@@ -20,12 +20,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.lpssfyx.ldy.crawlernovel.R;
 import com.lpssfyx.ldy.crawlernovel.utils.StringDialogCallback;
-import com.lpssfyx.ldy.crawlernovel.utils.UserBean;
+import com.lpssfyx.ldy.crawlernovel.bean.UserBean;
 import com.lpssfyx.ldy.crawlernovel.utils.StatusBarUtils;
 import com.lpssfyx.ldy.crawlernovel.utils.GsonUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 
+/**
+ * created by on 2021/11/8
+ * 描述：登录页面，验证管理员账户
+ *
+ * @author 龙大艳
+ * @create 2021-11-08-22:48
+ */
 public class LoginActivity extends AppCompatActivity implements TextWatcher {
 
     private static final String TAG = "LoginActivity";
@@ -111,7 +118,7 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher {
                     @Override
                     public void onError(Response<String> response) {
                         super.onError(response);
-                        Toast.makeText(LoginActivity.this, "请求失败！", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "服务器请求失败！", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

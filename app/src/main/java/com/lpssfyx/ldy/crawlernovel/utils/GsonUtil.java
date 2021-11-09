@@ -22,9 +22,9 @@ import java.util.Set;
 
 /**
  * created by on 2021/11/8
- * 描述：
+ * 描述：Json解析工具类
  *
- * @author ZSAndroid
+ * @author 龙大艳
  * @create 2021-11-08-23:10
  */
 public class GsonUtil {

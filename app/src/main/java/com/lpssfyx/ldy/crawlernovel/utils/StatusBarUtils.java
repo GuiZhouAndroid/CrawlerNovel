@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  * created by on 2021/8/22
  * 描述：沉浸式工具类
  * Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ? 0.2f : 0.3f;
- * @author ZSAndroid
+ * @author 龙大艳
  * @create 2021-08-22-00:26
  */
 

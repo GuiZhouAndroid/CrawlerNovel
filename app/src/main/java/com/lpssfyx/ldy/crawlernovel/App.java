@@ -18,9 +18,9 @@ import okhttp3.OkHttpClient;
 
 /**
  * created by on 2021/11/8
- * 描述：
+ * 描述：APP应用启动首先执行的类，初始化网络请求库
  *
- * @author ZSAndroid
+ * @author 龙大艳
  * @create 2021-11-08-22:35
  */
 public class App extends Application {

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/novel_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="小说编号"
+            android:paddingBottom="10dp"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/novel_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="小说名称"
+            android:paddingBottom="10dp"
+            android:textSize="17sp" />
+        <TextView
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/novel_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="小说作者"
+            android:paddingBottom="10dp"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/novel_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="爬取时间"
+            android:paddingBottom="10dp"
+            android:textSize="17sp" />
+    </LinearLayout>
+    <TextView
+        android:padding="30dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:textSize="15sp" />
+</LinearLayout>

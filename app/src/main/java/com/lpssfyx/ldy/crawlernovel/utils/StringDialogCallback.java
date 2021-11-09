@@ -9,9 +9,9 @@ import com.lzy.okgo.request.base.Request;
 
 /**
  * created by on 2021/11/8
- * 描述：
+ * 描述：网络请求进度条
  *
- * @author ZSAndroid
+ * @author 龙大艳
  * @create 2021-11-08-22:59
  */
 public abstract class StringDialogCallback extends StringCallback {

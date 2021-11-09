@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/1/AndroidStudioProjects/CrawlerNovel/app/src/main/res/layout/activity_admin_select_navel_names.xml" value="0.23097826086956522" />
+        <entry key="..\:/Users/1/AndroidStudioProjects/CrawlerNovel/app/src/main/res/layout/activity_admin_success.xml" value="0.23097826086956522" />
+        <entry key="..\:/Users/1/AndroidStudioProjects/CrawlerNovel/app/src/main/res/layout/admin_recycler_view_item.xml" value="0.264" />
+        <entry key="..\:/Users/1/AndroidStudioProjects/CrawlerNovel/app/src/main/res/layout/admin_recycler_view_novel_item.xml" value="0.23097826086956522" />
+        <entry key="..\:/Users/1/AndroidStudioProjects/CrawlerNovel/app/src/main/res/layout/admin_recycler_view_user_item.xml" value="0.23097826086956522" />
         <entry key="..\:/Users/ZSAndroid/Desktop/CrawlerNovel/app/src/main/res/drawable/editview_shape.xml" value="0.3764102564102564" />
         <entry key="..\:/Users/ZSAndroid/Desktop/CrawlerNovel/app/src/main/res/drawable/hand_down_anim.xml" value="0.36256410256410254" />
         <entry key="..\:/Users/ZSAndroid/Desktop/CrawlerNovel/app/src/main/res/drawable/hand_up_anim.xml" value="0.3764102564102564" />

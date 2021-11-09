@@ -1,10 +1,10 @@
-package com.lpssfyx.ldy.crawlernovel.utils;
+package com.lpssfyx.ldy.crawlernovel.bean;
 
 import lombok.Data;
 
 /**
  * created by on 2021/11/8
- * 描述：用户实体
+ * 描述：管理员实体
  *
  * @author ZSAndroid
  * @create 2021-11-08-22:48

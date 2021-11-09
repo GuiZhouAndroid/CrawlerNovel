@@ -1,41 +1,69 @@
 package com.lpssfyx.ldy.crawlernovel.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lpssfyx.ldy.crawlernovel.R;
 import com.lpssfyx.ldy.crawlernovel.bean.SelectAllUserInfo;
-import com.lpssfyx.ldy.crawlernovel.utils.StringDialogCallback;
+import com.lpssfyx.ldy.crawlernovel.bean.UserInfoBean;
 import com.lpssfyx.ldy.crawlernovel.utils.GsonUtil;
+import com.lpssfyx.ldy.crawlernovel.adapter.BaseUserInfoAdapter;
+import com.lpssfyx.ldy.crawlernovel.utils.StatusBarUtils;
+import com.lpssfyx.ldy.crawlernovel.utils.StringDialogCallback;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
  * created by on 2021/11/8
- * 描述：
+ * 描述：登录成功后，自动查询全部用户信息
  *
  * @author 龙大艳
  * @create 2021-11-08-22:48
  */
 public class AdminSuccessActivity extends AppCompatActivity {
     private static final String TAG = "AdminSuccessActivity";
-    RecyclerView rl_view;
-
+    private RecyclerView recyclerViewUser;
+    private BaseUserInfoAdapter adapter;
+    Button start_select;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_success);
+        StatusBarUtils.fullScreen(this);
+        initView();
+        initRecyclerView();
         selectAllUserInfo();
+    }
+
+    private void initView() {
+        recyclerViewUser = findViewById(R.id.recyclerView_user);
+        start_select = findViewById(R.id.start_select);
+        start_select.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminSuccessActivity.this,AdminSelectNavelNamesActivity.class));
+            }
+        });
+        // 滑动最后一个Item的时候回调onLoadMoreRequested方法
+    }
+
+    private void initRecyclerView() {
+        //创建布局管理, Recycle布局方式
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerViewUser.setLayoutManager(layoutManager);
     }
 
     private void selectAllUserInfo() {
@@ -46,27 +74,17 @@ public class AdminSuccessActivity extends AppCompatActivity {
                     public void onSuccess(Response<String> response) {
                         SelectAllUserInfo selectAllUserInfo = GsonUtil.gsonToBean(response.body(), SelectAllUserInfo.class);
                         if (200 == selectAllUserInfo.getCode() && selectAllUserInfo.getData() != null && selectAllUserInfo.getMsg().equals("success")) {
-                            List<SelectAllUserInfo.Data> list1 = new ArrayList<>();
-                            List<String> username = new ArrayList<>();
-                            List<Integer> id = new ArrayList<>();
-                            for (SelectAllUserInfo.Data data :selectAllUserInfo.getData()) {
-                                SelectAllUserInfo.Data d= new SelectAllUserInfo.Data(data.getId(),data.getLoginName());
-                                list1.add(d);
-                                username.add(d.getLoginName());
-                                id.add(d.getId());
-                                AlertDialog alertDialog1 = new AlertDialog.Builder(AdminSuccessActivity.this)
-                                        .setTitle("全部用户")//标题
-                                        .setMessage("系统当前用户有"+Arrays.toString(username.toArray()))//内容
-                                        .setIcon(R.mipmap.ic_launcher)//图标
-                                        .create();
-                                alertDialog1.show();
+                            UserInfoBean userInfoBean = null;
+                            List<SelectAllUserInfo.Data> list = selectAllUserInfo.getData();
+                            List<UserInfoBean> userInfoBeanList = new ArrayList<>();
+                            for (SelectAllUserInfo.Data userInfo : list) {
+                                userInfoBean = new UserInfoBean(userInfo.getId(), userInfo.getLoginName());
+                                userInfoBeanList.add(userInfoBean);
                             }
 
-//                            //纵向展示
-//                            rl_view.setLayoutManager(new LinearLayoutManager(AdminSuccessActivity.this,RecyclerView.VERTICAL,false));
-//                            //存入适配器
-//                            Recyadap recyadap = new Recyadap(AdminSuccessActivity.this,selectAllUserInfo.getData());
-//                            rl_view.setAdapter(recyadap);
+                            //创建适配器
+                            adapter = new BaseUserInfoAdapter(R.layout.admin_recycler_view_user_item, userInfoBeanList);
+                            recyclerViewUser.setAdapter(adapter);
                             return;
                         }
                         if (200 == selectAllUserInfo.getCode() && selectAllUserInfo.getData() == null && selectAllUserInfo.getMsg().equals("error")) {

@@ -7,9 +7,9 @@ import lombok.Data;
 
 /**
  * created by on 2021/11/8
- * 描述：
+ * 描述：SpringBoot返回的全部用户Json数据
  *
- * @author ZSAndroid
+ * @author 龙大艳
  * @create 2021-11-08-23:21
  */
 @Data
