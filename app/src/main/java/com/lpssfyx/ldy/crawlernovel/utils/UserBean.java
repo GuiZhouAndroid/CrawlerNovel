@@ -1,4 +1,4 @@
-package com.lpssfyx.ldy.crawlernovel;
+package com.lpssfyx.ldy.crawlernovel.utils;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.lpssfyx.ldy.crawlernovel;
+package com.lpssfyx.ldy.crawlernovel.utils;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.lpssfyx.ldy.crawlernovel.R;
+import com.lpssfyx.ldy.crawlernovel.bean.SelectAllUserInfo;
+
 import java.util.List;
 
 /**
@@ -34,7 +36,7 @@ public class Recyadap extends RecyclerView.Adapter<Recyadap.Viewholder> {
     @org.jetbrains.annotations.NotNull
     @Override
     public Viewholder onCreateViewHolder(@NonNull @org.jetbrains.annotations.NotNull ViewGroup parent, int viewType) {
-        return new Viewholder(LayoutInflater.from(context).inflate(R.layout.recyitem,parent,false));
+        return new Viewholder(LayoutInflater.from(context).inflate(R.layout.admin_recycler_view_item,parent,false));
     }
 
     @Override

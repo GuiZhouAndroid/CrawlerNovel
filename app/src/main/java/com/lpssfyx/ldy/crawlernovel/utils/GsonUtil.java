@@ -1,4 +1,4 @@
-package com.lpssfyx.ldy.crawlernovel;
+package com.lpssfyx.ldy.crawlernovel.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

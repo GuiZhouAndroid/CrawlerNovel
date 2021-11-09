@@ -1,4 +1,4 @@
-package com.lpssfyx.ldy.crawlernovel;
+package com.lpssfyx.ldy.crawlernovel.bean;
 
 import java.io.Serializable;
 import java.util.List;

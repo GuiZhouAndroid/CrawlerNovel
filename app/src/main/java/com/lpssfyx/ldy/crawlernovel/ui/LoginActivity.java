@@ -1,4 +1,4 @@
-package com.lpssfyx.ldy.crawlernovel;
+package com.lpssfyx.ldy.crawlernovel.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,14 +18,17 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.lpssfyx.ldy.crawlernovel.R;
+import com.lpssfyx.ldy.crawlernovel.utils.StringDialogCallback;
+import com.lpssfyx.ldy.crawlernovel.utils.UserBean;
+import com.lpssfyx.ldy.crawlernovel.utils.StatusBarUtils;
+import com.lpssfyx.ldy.crawlernovel.utils.GsonUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.Response;
 
-import java.util.ArrayList;
+public class LoginActivity extends AppCompatActivity implements TextWatcher {
 
-public class MainActivity extends AppCompatActivity implements TextWatcher {
-
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "LoginActivity";
 
     private EditText username;
     private EditText password;
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         StatusBarUtils.fullScreen(this);
         initViews();
     }
@@ -95,20 +98,20 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
                         UserBean userBean = GsonUtil.gsonToBean(response.body(), UserBean.class);
                         Log.i(TAG, "userBean: " + userBean);
                         if (200 == userBean.getCode() && userBean.getData() != null && userBean.getMsg().equals("success")) {
-                            startActivity(new Intent(MainActivity.this, LoginSuccessActivity.class));
-                            Toast.makeText(MainActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginActivity.this, AdminSuccessActivity.class));
+                            Toast.makeText(LoginActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
                             finish();
                             return;
                         }
                         if (200 == userBean.getCode() && userBean.getData() == null && userBean.getMsg().equals("error")) {
-                            Toast.makeText(MainActivity.this, "用户名和密码不匹配！", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "用户名和密码不匹配！", Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
                     public void onError(Response<String> response) {
                         super.onError(response);
-                        Toast.makeText(MainActivity.this, "请求失败！", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "请求失败！", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

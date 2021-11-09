@@ -25,7 +25,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CrawlerNovel">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,7 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginSuccessActivity"
+        <activity android:name=".ui.AdminSuccessActivity"
             android:exported="true"/>
     </application>
 
