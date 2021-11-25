@@ -48,9 +48,11 @@ public class AdminSelectNavelNamesActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView() {
-        //创建布局管理, Recycle布局方式
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        // 1.创建布局管理实例对象
+        LinearLayoutManager layoutManager = new LinearLayoutManager(AdminSelectNavelNamesActivity.this);
+        // 2.设置RecyclerView布局方式为垂直方向
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        // 3.RecyclerView绑定携带垂直方向参数的布局管理实例对象
         recyclerViewNavel.setLayoutManager(layoutManager);
     }
 
@@ -67,13 +69,12 @@ public class AdminSelectNavelNamesActivity extends AppCompatActivity {
                         BookBean bookBean = GsonUtil.gsonToBean(response.body(), BookBean.class);
                         Log.i("bookBean", "bookBean: === " + bookBean);
                         if (200 == bookBean.getCode() && bookBean.getData() != null && bookBean.getMsg().equals("success")) {
-                            BookInfoBean bookInfoBean = null;
                             List<BookBean.Data> list = bookBean.getData();
                             List<BookInfoBean> bookInfoBeanList = new ArrayList<>();
 
                             Log.i(TAG, "list: " + list);
                             for (BookBean.Data bookInfo : list) {
-                                bookInfoBean = new BookInfoBean(bookInfo.getId(), bookInfo.getBookName(), bookInfo.getAuthor(), bookInfo.getUpdateTime());
+                                BookInfoBean bookInfoBean = new BookInfoBean(bookInfo.getId(), bookInfo.getBookName(), bookInfo.getAuthor(), bookInfo.getUpdateTime());
                                 bookInfoBeanList.add(bookInfoBean);
                             }
 
